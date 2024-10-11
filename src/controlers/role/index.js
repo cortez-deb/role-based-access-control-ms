@@ -214,6 +214,122 @@ class RoleController {
             "Role retrieved successfully."
         )
     }
+ 
+/**
+ * Assigns a permission to a role.
+ *
+ * @function assignPermissions
+ * @param {Object} req - The request object containing the role ID and permission ID in the params.
+ * @param {Object} res - The response object to send the response.
+ * @param {string} req.params.id - The ID of the role to which the permission will be assigned.
+ * @param {string} req.params.permission_id - The ID of the permission to be assigned to the role.
+ *
+ * @returns {Promise<Object>} - A promise that resolves to the updated role object or null if the update fails.
+ *
+ * @example
+ * // Request: PUT /roles/123/permissions/456
+ * // Response:
+ * // {
+ * //   "status": "success",
+ * //   "data": {
+ * //     "id": 123,
+ * //     "name": "Manager",
+ * //     "permissions": [
+ * //       {
+ * //         "id": 456,
+ * //         "name": "Create User",
+ * //         // ... other permission properties
+ * //       },
+ * //       // ... other permissions
+ * //     ],
+ * //     // ... other role properties
+ * //   },
+ * //   "message": "Permissions assigned successfully."
+ * // }
+ * //
+ * // If the role or permission is not found or the update fails:
+ * // Response:
+ * // {
+ * //   "status": "error",
+ * //   "message": "Failed to assign permissions."
+ * // }
+ */
+async assignPermission(req, res) {
+    const role = await RoleService.assignPermissions(req.params.id, req.params.permission_id);
+    if (!role) {
+        ResponseService.error(
+            res,
+            "Failed to assign permissions."
+        )
+    }
+    ResponseService.success(
+        res,
+        role,
+        "Permissions assigned successfully."
+    )
+}
+    async removePermission (req, res) {
+        const role = await RoleService.removePermissions(req.params.id, req.params.permission_id);
+        if (!role) {
+            ResponseService.error(
+                res,
+                "Failed to remove permissions."
+            )
+        }
+        ResponseService.success(
+            res,
+            role,
+            "Permissions removed successfully."
+        )
+    }
+
+    /**
+     * Retrieves permissions associated with a specific role.
+     *
+     * @function getPermissionsByRole
+     * @param {Object} req - The request object containing the role ID in the params.
+     * @param {Object} res - The response object to send the response.
+     * @param {string} req.params.id - The ID of the role for which to retrieve permissions.
+     *
+     * @returns {Promise<Object>} - A promise that resolves to the retrieved permissions or null if the retrieval fails.
+     *
+     * @example
+     * // Request: GET /roles/123/permissions
+     * // Response:
+     * // {
+     * //   "status": "success",
+     * //   "data": [
+     * //     {
+     * //       "id": 456,
+     * //       "name": "Create User",
+     * //       // ... other permission properties
+     * //     },
+     * //     // ... other permissions
+     * //   ],
+     * //   "message": "Permissions retrieved successfully."
+     * // }
+     * //
+     * // If the role is not found or the retrieval fails:
+     * // Response:
+     * // {
+     * //   "status": "error",
+     * //   "message": "Failed to retrieve permissions."
+     * // }
+     */
+    async getPermissionsByRole(req, res) {
+        const permissions = await RoleService.getPermissionsByRole(req.params.id);
+        if (!permissions) {
+            ResponseService.error(
+                res,
+                "Failed to retrieve permissions."
+            )
+        }
+        ResponseService.success(
+            res,
+            permissions,
+            "Permissions retrieved successfully."
+        )
+    }
 }
 
 export default new RoleController();

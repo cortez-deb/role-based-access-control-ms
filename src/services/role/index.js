@@ -1,4 +1,7 @@
 import Role from "../../models/role.js";
+import Permission from "../../models/permission.js";
+import RolePermissions from "../../models/rolePermission.js"
+import sequelize from "../../models/index.js";
 class RoleService {
     /**
      * Creates a new role in the database.
@@ -27,7 +30,10 @@ class RoleService {
      */
     async get(id) {
         try {
-            const role = await Role.findByPk(id);
+            const role = await Role.findOne({
+                where: {id: id},
+                include:[Permission]
+            });
             return role;
         } catch (e) {
             console.error(e);
@@ -44,7 +50,7 @@ class RoleService {
      */
     async getDepartmentRoles(department) {
         try {
-            const roles = await Role.findAll({ where: { department } });
+            const roles = await Role.findAll({ where: { department }, include: [Permission] });
             return roles;
         } catch (e) {
             console.error(e);
@@ -62,7 +68,7 @@ class RoleService {
      */
     async getRoleByName(name){
         try {
-            const role = await Role.findOne({ where: { name } });
+            const role = await Role.findOne({ where: { name }, include: [Permission] });
             return role;
         } catch (e) {
             console.error(e);
@@ -107,6 +113,106 @@ class RoleService {
         } catch (e) {
             console.error(e);
             return false;
+        }
+    }
+    /**
+     * Assigns a permission to a role in the database.
+     *
+     * @param {number} role_id - The ID of the role to assign the permission to.
+     * @param {number} permission_id - The ID of the permission to assign to the role.
+     *
+     * @returns {Promise<Role|null>} - A promise that resolves to the updated role with the assigned permission,
+     * or null if an error occurs or the role or permission does not exist.
+     *
+     * @throws Will throw an error if the database operation fails.
+     */
+    async assignPermissions(role_id, permission_id){
+        try{
+            const transaction = await sequelize.transaction();
+            const role = await Role.findByPk(role_id, { transaction });
+            if(!role) return null;
+            const permissions = await Permission.findOne(
+                { where: {
+                    id: permission_id
+                } },
+                { transaction }
+            )
+            if(!permissions) return null;
+            await RolePermissions.create(
+                {
+                    role_id: role_id,
+                    permission_id: permission_id
+                },{ transaction })
+
+            await transaction.commit();
+            return role;
+
+        }catch(e){
+            console.error(e);
+            return null;
+        }
+    }
+    /**
+     * Removes a permission from a role in the database.
+     *
+     * @param {number} role_id - The ID of the role to remove the permission from.
+     * @param {number} permission_id - The ID of the permission to remove from the role.
+     *
+     * @returns {Promise<Role|null>} - A promise that resolves to the updated role without the removed permission,
+     * or null if an error occurs or the role or permission does not exist.
+     *
+     * @throws Will throw an error if the database operation fails.
+     */
+    async removePermissions(role_id, permission_id){
+        try{
+            const transaction = await sequelize.transaction();
+            const role = await Role.findByPk(role_id, { transaction });
+            if(!role) return null;
+            const permissions = await Permission.findOne(
+                { where: {
+                    id: permission_id
+                } },
+                { transaction }
+            )
+            if(!permissions) return null;
+            await RolePermissions.destroy(
+                {
+                    where: {
+                        role_id: role_id,
+                        permission_id: permission_id
+                    }
+                },{ transaction })
+
+            await transaction.commit();
+            return role;
+
+        }catch(e){
+            console.error(e);
+            return null;
+        }
+    }
+    /**
+     * Retrieves permissions associated with a specific role from the database.
+     *
+     * @param {number} role_id - The ID of the role to retrieve permissions for.
+     *
+     * @returns {Promise<RolePermissions[]|null>} - A promise that resolves to an array of RolePermissions
+     * instances associated with the specified role, or null if an error occurs. Each RolePermissions instance
+     * includes the associated Permission.
+     *
+     * @throws Will throw an error if the database operation fails.
+     */
+    async getPermissionsByRole(role_id){
+        try{
+            const permissions = await RolePermissions.findAll(
+                { where: {
+                    role_id: role_id
+                }, include: [Permission] }
+            )
+            return permissions;
+        }catch(e){
+            console.error(e);
+            return null;
         }
     }
 }

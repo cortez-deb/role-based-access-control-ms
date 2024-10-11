@@ -35,6 +35,19 @@ const routes = (app)=>{
         `${api}/name/:name`,
         RoleController.getRoleByName(req, res)
     )
+    app.post(
+        `${api}/assign/permission/role/:id/permission/:permission_id`,
+        RoleSchemas.assignPermissionSchema.safeParse(req.body),
+        RoleController.assignPermission(req, res)
+    );
+    app.delete(
+        `${api}/remove/permission/role/:id/permission/:permission_id`,
+        RoleController.removePermission(req, res)
+    );
+    app.get(
+        `${api}/permission/role/:id`,
+        RoleController.getPermissionsByRole(req, res)
+    );
 }
 
 
