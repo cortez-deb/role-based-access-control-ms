@@ -1,52 +1,69 @@
 import RoleController from '../../controlers/role/index.js';
+import validate from '../../functions/validateResource.js';
 import RoleSchemas from '../../schemas/role/index.js';
 
 
 const routes = (app)=>{
-    const api = '/api/vi/role';
+    const api = '/api/v1/role';
 
     app.post(
         `${api}/create`,
-        RoleSchemas.roleSchema.safeParse(req.body),
-        RoleController.create(req, res)
+        validate(RoleSchemas.roleSchema),
+        async (req, res) =>{
+            RoleController.create(req, res)
+        }
     );
 
     app.get(
         `${api}/:id`,
-        RoleController.get(req, res)
+        async(req, res) =>{
+            RoleController.get(req, res)
+        }
     );
 
     app.get(
         `${api}/department/:department`,
+       async (req, res) =>{
         RoleController.getDepartmentRoles(req, res)
+       }
     );
 
     app.put(
         `${api}/:id`,
-        RoleSchemas.updateRoleSchema.safeParse(req.body),
-        RoleController.update(req, res)
+        async (req, res) =>{
+            RoleController.update(req, res)
+        }
     );
 
     app.delete(
         `${api}/:id`,
-        RoleController.delete(req, res)
+        async (req, res) => {
+            RoleController.delete(req, res)
+        }
     );
     app.get(
         `${api}/name/:name`,
-        RoleController.getRoleByName(req, res)
+        async (req, res) => {
+            RoleController.getRoleByName(req, res)
+        }
     )
     app.post(
         `${api}/assign/permission/role/:id/permission/:permission_id`,
-        RoleSchemas.assignPermissionSchema.safeParse(req.body),
-        RoleController.assignPermission(req, res)
+        async (req, res) => {
+            RoleController.assignPermission(req, res)
+        }
     );
     app.delete(
         `${api}/remove/permission/role/:id/permission/:permission_id`,
-        RoleController.removePermission(req, res)
+        async (req, res) => {
+            RoleController.removePermission(req, res)
+        }
     );
     app.get(
         `${api}/permission/role/:id`,
-        RoleController.getPermissionsByRole(req, res)
+        async (req, res) => {
+            RoleController.getPermissionsByRole(req, res)
+        }
     );
 }
 

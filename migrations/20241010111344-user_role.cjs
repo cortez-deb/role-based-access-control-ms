@@ -3,23 +3,18 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add altering commands here.
-     *
-     * Example:
-     * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
-     */
-    await queryInterface.createTable('users', {
+ 
+    await queryInterface.createTable('users_role', {
       id: {
         type: Sequelize.UUID,
         primaryKey: true,
         defaultValue: Sequelize.UUIDV4,
       },
       user_id: {
-        type: Sequelize.STRING,
+        type:  Sequelize.UUID,
         allowNull: false,
         references:{
-          model: 'user',
+          model: 'RBA_User',
           key: 'id',
           onDelete: 'CASCADE',
         }
@@ -38,11 +33,7 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    await queryInterface.dropTable('users_role');
+
   }
 };

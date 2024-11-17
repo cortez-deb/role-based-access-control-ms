@@ -1,5 +1,6 @@
 import { Model, DataTypes } from "sequelize";
-import sequelize from "./index.js";
+import sequelize from "../../config/connection.js";
+
 
 class UserRoles extends Model {
   id = null;
@@ -19,7 +20,7 @@ UserRoles.init(
     user_id: {
       type: DataTypes.UUID,
       references: {
-        model: "User",
+        model: "RBA_User",
         key: "id",
       },
       onDelete: "CASCADE",
@@ -36,7 +37,7 @@ UserRoles.init(
   {
     sequelize,
     modelName: "UserRoles",
-    tableName: "user_roles",
+    tableName: "users_role",
     freezeTableName: true,
     timestamps: true,
   }

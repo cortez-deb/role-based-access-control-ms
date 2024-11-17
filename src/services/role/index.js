@@ -1,7 +1,8 @@
 import Role from "../../models/role.js";
 import Permission from "../../models/permission.js";
 import RolePermissions from "../../models/rolePermission.js"
-import sequelize from "../../models/index.js";
+import sequelize from "../../../config/connection.js"
+
 class RoleService {
     /**
      * Creates a new role in the database.
@@ -32,7 +33,7 @@ class RoleService {
         try {
             const role = await Role.findOne({
                 where: {id: id},
-                include:[Permission]
+               // include:[Permission]
             });
             return role;
         } catch (e) {
@@ -50,7 +51,7 @@ class RoleService {
      */
     async getDepartmentRoles(department) {
         try {
-            const roles = await Role.findAll({ where: { department }, include: [Permission] });
+            const roles = await Role.findAll({ where: { department }});
             return roles;
         } catch (e) {
             console.error(e);
@@ -89,6 +90,7 @@ class RoleService {
             const role = await Role.findByPk(id);
             if (!role) return null;
             await role.update(data);
+            role.save()
             return role;
         } catch (e) {
             console.error(e);

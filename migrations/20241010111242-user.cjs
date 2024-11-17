@@ -4,7 +4,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-      await queryInterface.createTable('users',{
+      await queryInterface.createTable('RBA_User',{
         id: {
           type: Sequelize.UUID,
           primaryKey: true,
@@ -12,7 +12,7 @@ module.exports = {
         },
         email: {
           type: Sequelize.STRING,
-          allowNull: false,
+          allowNull: true,
           unique: true,
         },
         username: {
@@ -22,11 +22,7 @@ module.exports = {
         },
         role: {
           type: Sequelize.UUID,
-          references: {
-            model: 'roles',
-            key: 'id',
-          },
-          onDelete: 'CASCADE',
+          allowNull:true
         },
         createdAt: Sequelize.DATE,
         updatedAt: Sequelize.DATE,
@@ -34,6 +30,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('users');
+    await queryInterface.dropTable('RBA_User');
   }
 };

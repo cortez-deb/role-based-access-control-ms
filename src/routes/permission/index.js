@@ -1,20 +1,32 @@
 import PermissionController from '../../controlers/permision/index.js'
 import permisionSchema from '../../schemas/permission/index.js'
-
+import validate from '../../functions/validateResource.js'
 const routes = (app) => {
     const api = '/api/vi/permission'
 
     app.post(
         `${api}/create`,
-        permisionSchema.permissionSchema.safeParse(req.body),
-        PermissionController.create(req, res)
+        validate(permisionSchema),
+        async(req,res)=>{
+            PermissionController.create(req,res)
+        }
     );
 
-    app.get(`${api}/:id`, PermissionController.get(req, res))
-    app.get(`${api}/name/:name`, PermissionController.getByName(req, res))
-    app.get(`${api}/role/:roleId`, PermissionController.getAllByRole(req, res))
-    app.put(`${api}/:id`, PermissionController.update(req, res))
-    app.delete(`${api}/:id`, PermissionController.delete(req, res))
+    app.get(`${api}/:id`, async(req,res)=>{
+        PermissionController.get(req,res)
+    }, )
+    app.get(`${api}/name/:name`,async(req,res) => {
+        PermissionController.getByName(req,res)
+    })
+    app.get(`${api}/role/:roleId`, async (req,res) =>{
+        PermissionController.getAllByRole(req,res)
+    })
+    app.put(`${api}/:id`, async (req,res) =>{
+        PermissionController.update(req,res)
+    })
+    app.delete(`${api}/:id`, async (req, res) => {
+        PermissionController.delete(req,res)
+    })
 }
 
 export default routes

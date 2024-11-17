@@ -1,8 +1,8 @@
 import User from "../../models/user.js";
 import Role from "../../models/role.js";
 import Permission from "../../models/permission.js";
-import sequelize from "../../models/index.js";
-
+import sequelize from "../../../config/connection.js"
+import UserRoles from '../../models/userRole.js'
 class UserService {
 /**
  * Creates a new user in the database.
@@ -110,6 +110,7 @@ async update(id, data) {
     const user = await User.findByPk(id);
     if (!user) return null;
     await user.update(data);
+    user.save()
     return user;
   } catch (e) {
     console.error(e);
@@ -153,19 +154,27 @@ async update(id, data) {
   async assignRole(userId, roleId) {
     const transaction = await sequelize.transaction();
     try {
-      const user = await User.findByPk(userId, { transaction });
-      const role = await Role.findByPk(roleId, { transaction });
-
+      const user = await User.findOne({where:{id:userId}}, { transaction });
+      const role = await Role.findOne({where:{id:roleId}}, { transaction });
       if (!user || !role) {
-        await transaction.rollback();
+        return null;
+      }
+      const userRole = await UserRoles.findOne({where:{user_id:userId, role_id:roleId}}, { transaction });
+      if (userRole) {
         return null;
       }
 
-      await user.addRole(role, { transaction });
-
+     await UserRoles.create({
+        user_id: userId,
+        role_id: roleId
+      },{
+        transaction
+      }
+    )
       await transaction.commit();
       return user;
     } catch (e) {
+      console.log(e)
       await transaction.rollback();
       return null;
     }

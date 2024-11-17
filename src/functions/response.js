@@ -1,13 +1,11 @@
-import logger from "../functions/logger.js";
-
 export default class ResponseService {
     static success(res, data,message ) {
         return res.status(200).json({ data, message });
     }
 
     static error( res, error ) {
-        logger.error(error);
-        return res.status(400).json({ error });
+       
+        return res.status(200).json({ error });
     }
 
     static update( res, data) {
@@ -20,7 +18,7 @@ export default class ResponseService {
 
 
     static serverError(res, error) {
-        logger.error(error);
+       
         return res.status(500).json({ error });
     }
 

@@ -19,11 +19,13 @@ class RoleController {
                 "Failed to create role."
             )
         }
+       else{
         ResponseService.success(
             res,
             role,
             "Role created successfully."
         )
+       }
     }
     /**
      * Retrieves a role by its ID.
@@ -41,11 +43,13 @@ class RoleController {
                 "Role not found."
             )
         }
+       else{
         ResponseService.success(
             res,
             role,
             "Role retrieved successfully."
         )
+       }
     }
     /**
      * Retrieves roles associated with a specific department.
@@ -81,11 +85,13 @@ class RoleController {
                 "Failed to retrieve roles for department."
             )
         }
-        ResponseService.success(
-            res,
-            roles,
-            "Roles retrieved successfully."
-        )
+        else{
+            ResponseService.success(
+                res,
+                roles,
+                "Roles retrieved successfully."
+            )
+        }
     }
     /**
      * Updates an existing role by its ID.
@@ -120,11 +126,13 @@ class RoleController {
                 "Failed to update role."
             )
         }
+     else{
         ResponseService.success(
             res,
             role,
             "Role updated successfully."
         )
+     }
     }
     /**
      * Deletes a role by its ID.
@@ -164,11 +172,13 @@ class RoleController {
                 "Failed to delete role."
             )
         }
+       else{
         ResponseService.success(
             res,
             role,
             "Role deleted successfully."
         )
+       }
     }
     /**
      * Retrieves a role by its name.
@@ -208,11 +218,13 @@ class RoleController {
                 "Role not found."
             )
         }
+       else{
         ResponseService.success(
             res,
             role,
             "Role retrieved successfully."
         )
+       }
     }
  
 /**
@@ -262,11 +274,13 @@ async assignPermission(req, res) {
             "Failed to assign permissions."
         )
     }
+   else{
     ResponseService.success(
         res,
         role,
         "Permissions assigned successfully."
     )
+   }
 }
     async removePermission (req, res) {
         const role = await RoleService.removePermissions(req.params.id, req.params.permission_id);

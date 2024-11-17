@@ -1,4 +1,4 @@
-import ResponseService from "../../functions/response";
+import ResponseService from "../../functions/response.js";
 import PermissionService from "../../services/permision/index.js";
 
 

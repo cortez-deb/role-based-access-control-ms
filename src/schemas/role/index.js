@@ -2,13 +2,13 @@ import { object, string, number } from "zod";
 
 const roleSchema = object({
     body: object({
-        id: string(
-            {
-                description: "The unique identifier of the role.",
-                required: true,
-                required_error: "Please provide a unique identifier"
-            }
-        ),
+        // id: string(
+        //     {
+        //         description: "The unique identifier of the role.",
+        //         required: true,
+        //         required_error: "Please provide a unique identifier"
+        //     }
+        // ),
         name: string({
             description: "The name of the role.",
             min_length: 1,

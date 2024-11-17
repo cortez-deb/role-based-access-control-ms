@@ -2,11 +2,6 @@ import { object, string } from "zod";
 
 const userSchema_ = object({
   body: object({
-    id: string({
-      description: "The unique identifier of the user.",
-      required: true,
-      required_error: "Please provide a unique identifier",
-    }),
     email: string({
         description: "The email address of the user.",
         format: "email",

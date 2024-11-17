@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": null,
-    "password": null,
-    "database": null,
-    "host": null,
-    "dialect": null
+    "username": "postgres",
+    "password": "1234",
+    "database": "kuza",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   },
   "test": {
     "username": null,

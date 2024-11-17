@@ -1,5 +1,6 @@
 import { Model, DataTypes } from "sequelize";
-import sequelize from "./index.js";
+import sequelize from "../../config/connection.js";
+
 
 class User extends Model {
     static associate(models) {
@@ -42,7 +43,7 @@ User.init(
     {
         sequelize,
         modelName: "User",
-        tableName: "users",
+        tableName: "RBA_User",
         freezeTableName: true,
         timestamps: true,
     }

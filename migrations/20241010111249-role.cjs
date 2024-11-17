@@ -17,7 +17,7 @@ module.exports = {
       department: {
         type: Sequelize.STRING,
         allowNull: false,
-        unique: true,
+        unique: false,
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE,

@@ -1,5 +1,6 @@
 import { Model, DataTypes } from "sequelize";
-import sequelize from "./index.js";
+import sequelize from "../../config/connection.js";
+
 
 class RolePermissions extends Model {
   id = null;
