@@ -10,11 +10,10 @@ class UserService {
    * Creates a new user in the database.
    *
    * @param {Object} data - The user data to be created.
-   * @param {string} data.username - The unique username of the user.
+   * @param {string} data.id - The unique id of the user.
    * @param {string} data.email - The unique email of the user.
-   * @param {string} data.password - The password of the user.
-   * @param {string} [data.firstName] - The first name of the user.
-   * @param {string} [data.lastName] - The last name of the user.
+   * @param {string} data.role - The role of the user.
+   
    *
    * @returns {Promise<User|null>} - A promise that resolves to the created user, or null if an error occurs.
    *
@@ -23,6 +22,7 @@ class UserService {
   async create(data) {
     try {
       const user = await User.create(data);
+      await this.assignRole(data.id, data.role)
       return user;
     } catch (e) {
       console.error(e);
@@ -206,9 +206,12 @@ class UserService {
    */
   async removeRole(id) {
     try {
+      console.log(id)
       const del = await UserRoles.destroy({
-        where: { id: id },
+        where: { id },
+        force:true
       });
+      console.log(del)
       return del;
     } catch (e) {
       console.error(e);
@@ -309,7 +312,6 @@ class UserService {
    **/
   async getRoles(id) {
     try {
-      console.log(id);
       const user = await User.findOne({ where: { id: id } });
       if (!user) return "User not found";
       const roles = await UserRoles.findAll({
