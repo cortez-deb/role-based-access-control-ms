@@ -223,6 +223,15 @@ class RoleService {
             return null;
         }
     }
+    async getAll(){
+        try{
+            const roles = await Role.findAll();
+            return roles;
+        }catch(e){
+            console.error(e);
+            return null;
+        }
+    }
 }
 
 export default new RoleService();

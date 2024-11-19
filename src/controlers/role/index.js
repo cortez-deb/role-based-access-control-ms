@@ -344,6 +344,23 @@ async assignPermission(req, res) {
             "Permissions retrieved successfully."
         )
     }
+
+    async getAll(req,res){
+        const roles = await RoleService.getAll();
+        if (!roles) {
+            ResponseService.error(
+                res,
+                "Failed to retrieve roles."
+            )
+        }
+        else{
+            ResponseService.success(
+                res,
+                roles,
+                "Roles retrieved successfully."
+            )
+        }
+    }
 }
 
 export default new RoleController();

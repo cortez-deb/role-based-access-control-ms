@@ -20,6 +20,12 @@ const routes = (app)=>{
             RoleController.get(req, res)
         }
     );
+    app.get(
+        `${api}/get/all/roles`,
+       async (req, res) =>{
+        RoleController.getAll(req, res)
+       })
+
 
     app.get(
         `${api}/department/:department`,
