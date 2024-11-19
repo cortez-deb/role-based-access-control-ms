@@ -299,6 +299,41 @@ async update(id, data) {
       return null;
     }
   }
+  /**
+   * Retrieves all roles associated with a user based on their username, email, or ID.
+   * @param {number} id - The unique identifier of the user.
+   **/
+  async getRoles(username, email, id) {
+    try {
+      const user = await User.findOne({ where: { id:id } });
+      if (!user) return "User not found"
+      const roles = await Role.findAll(
+        {
+          where: { user_id: user.id },
+          include: [
+            {
+              model: Permission,
+              attributes: [],
+              through: {
+                attributes: [
+                  'id',
+                  'name',
+                  'description',
+                  'created_at',
+                  'updated_at',
+                ],
+              },
+             
+              required: true,
+            },
+          ],
+        }
+      )
+    } catch (e) {
+      console.error(e);
+      return null;
+    }
+  }
 }
 
 export default new UserService();

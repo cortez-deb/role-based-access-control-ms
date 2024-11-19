@@ -16,14 +16,16 @@ class PermissionController {
         if (!permission) {
             ResponseService.error(
                 res,
-                "Failed to create permission."
+                "Failed to create permission. Or exists"
             )
         }
+       else{
         ResponseService.success(
             res,
             permission,
             "Permission created successfully."
         )
+       }
     }
     /**
      * Retrieves a permission by its ID.
@@ -41,11 +43,13 @@ class PermissionController {
                 "Permission not found."
             )
         }
-        ResponseService.success(
+      else{
+          ResponseService.success(
             res,
             permission,
             "Permission retrieved successfully."
         )
+      }
     }
     /**
      * Retrieves a permission by its name.
@@ -67,11 +71,13 @@ class PermissionController {
                 "Permission not found."
             )
         }
-        ResponseService.success(
+      else{
+          ResponseService.success(
             res,
             permission,
             "Permission retrieved successfully."
         )
+      }
     }
     /**
      * Retrieves all permissions associated with a specific role.
@@ -93,11 +99,13 @@ class PermissionController {
                 "Failed to retrieve permissions for role."
             )
         }
+       else{
         ResponseService.success(
             res,
             permissions,
             "Permissions retrieved successfully."
         )
+       }
     }
     /**
      * Updates an existing permission.
@@ -120,11 +128,13 @@ class PermissionController {
                 "Failed to update permission."
             )
         }
+       else{
         ResponseService.success(
             res,
             permission,
             "Permission updated successfully."
         )
+       }
     }
     /**
      * Deletes a permission by its ID.
@@ -139,19 +149,46 @@ class PermissionController {
      * @rejects {Object} - An error object with a message property indicating the failure reason.
      */
     async delete(req, res) {
-        const success = await PermissionService.delete(req.params.id);
+        const action = req.body.action;
+        if(!action){
+            ResponseService.error(
+                res,
+                "Action Type is required."
+            )
+            return;
+        }
+        const success = await PermissionService.delete(req.params.id, action);
         if (!success) {
             ResponseService.error(
                 res,
                 "Failed to delete permission."
             )
         }
+      else{
         ResponseService.success(
             res,
-            null,
+            success,
             "Permission deleted successfully."
+        )
+      }
+    }
+
+    async getAll (req, res){
+        const permissions = await PermissionService.getAll();
+        if (!permissions) {
+            ResponseService.error(
+                res,
+                "Failed to retrieve permissions."
+            )
+        }
+       else{
+        ResponseService.success(
+            res,
+            permissions,
+            "Permissions retrieved successfully."
         )
     }
 }
+}
 
-export default PermissionController;
+export default new PermissionController;

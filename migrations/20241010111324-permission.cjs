@@ -7,12 +7,12 @@ module.exports = {
     await queryInterface.createTable('permissions',{
       id: {
         type: Sequelize.UUID,
-        primaryKey: true,
+        primaryKey: false,
         defaultValue: Sequelize.UUIDV4,
       },
       name: {
         type: Sequelize.STRING,
-        unique: true,
+        unique: false,
         allowNull: false,
       },
       action: {

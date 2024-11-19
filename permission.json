@@ -1,0 +1,181 @@
+{
+    "data": {
+        "user": {
+            "id": "47f708f0-51b3-4171-a189-a7044646100e",
+            "username": "t2eswt11@user.com",
+            "email": "test2w11@user.com",
+            "created_at": "2024-11-17T18:59:21.939Z",
+            "updated_at": "2024-11-17T18:59:21.940Z",
+            "accept": true
+        },
+        "authToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoidGVzdDJ3MTFAdXNlci5jb20iLCJpZCI6IjQ3ZjcwOGYwLTUxYjMtNDE3MS1hMTg5LWE3MDQ0NjQ2MTAwZSJ9LCJpYXQiOjE3MzIwMjYwMTksImV4cCI6MTczMjAyNjMxOX0.WWEeCKI-hO519wb_sTbSOl9WtgUbQSCughjThYu-VQSKxXUkqIDEpMFu13rUrQCCsSeebvhXCLNSZDj1p0xl_e8rjftgyDJ40eHtt4vrAC47A95-PGJQSOeBrKTElDyVnIoko8HrzR9xxzjEAH4O72Qlg6ke567Scarx808SEfrqn9uQYs3qI03YuTOS80azunT0JPqCmr3u9dLDGOZuUvkDDnPgQUljWFVTc_qw2xe8qMzTUIGGhYASxUqvlQueuqAeFz_-lJji14fFAezSXG-ZcoBq2G-pH_l9N5KF5rgvjDcNgwyx1aeOTCAgMsVSdv1Ota5nBC0E3210wwU1Cw",
+        "refreshToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoidGVzdDJ3MTFAdXNlci5jb20iLCJpZCI6IjQ3ZjcwOGYwLTUxYjMtNDE3MS1hMTg5LWE3MDQ0NjQ2MTAwZSJ9LCJpYXQiOjE3MzIwMjYwMTksImV4cCI6MTczMjAyNjYxOX0.JR1nBmhlL8c2V5r_uOkGc_4Q-PLy0e89ZeDSiZT5sQdWdM7StmHDZ2ltosUF9rvcM8pD5pTX0wiGegw39nhNtWcy0cStacA-bkYu6tVPJeSnFeXoWZcqkyzybcEzLzoTCU8rR8TeVraogJ0wJKT5CSNoR1jiQ5-TtwOdmdJYdJX3rAlX-_CqdECOVzKD9EElF8kvWzXjxnVLptX_nlVEpabKEx8FxbZcdPu95k7bZrwv7KXxPwlZ2KX6rlsomUVpBjoGpzz-BT9G6_5YR4UXWQAWBM6qs8YPGWRzJGyPbGg-8Y-wdsxwzKz6c4s2WSUXKc6thBkMhFOUT6zL7ARMrQ",
+        "permissions": [
+            {
+                "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                "data": [
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "Create",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:17:11.634Z",
+                        "updatedAt": "2024-11-19T14:17:11.634Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "View",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:23:36.823Z",
+                        "updatedAt": "2024-11-19T14:23:36.823Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "highlights",
+                        "action": "View",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:23:51.029Z",
+                        "updatedAt": "2024-11-19T14:23:51.029Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Results",
+                        "action": "View",
+                        "resource": "Results",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:24:15.089Z",
+                        "updatedAt": "2024-11-19T14:24:15.089Z"
+                    }
+                ]
+            },
+            {
+                "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                "data": [
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "Create",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:17:11.634Z",
+                        "updatedAt": "2024-11-19T14:17:11.634Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "View",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:23:36.823Z",
+                        "updatedAt": "2024-11-19T14:23:36.823Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "highlights",
+                        "action": "View",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:23:51.029Z",
+                        "updatedAt": "2024-11-19T14:23:51.029Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Results",
+                        "action": "View",
+                        "resource": "Results",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:24:15.089Z",
+                        "updatedAt": "2024-11-19T14:24:15.089Z"
+                    }
+                ]
+            }
+            ,
+            {
+                "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                "data": [
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "Create",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:17:11.634Z",
+                        "updatedAt": "2024-11-19T14:17:11.634Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "View",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:23:36.823Z",
+                        "updatedAt": "2024-11-19T14:23:36.823Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "highlights",
+                        "action": "View",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:23:51.029Z",
+                        "updatedAt": "2024-11-19T14:23:51.029Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Results",
+                        "action": "View",
+                        "resource": "Results",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:24:15.089Z",
+                        "updatedAt": "2024-11-19T14:24:15.089Z"
+                    }
+                ]
+            },
+            {
+                "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                "data": [
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "Create",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:17:11.634Z",
+                        "updatedAt": "2024-11-19T14:17:11.634Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "View",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:23:36.823Z",
+                        "updatedAt": "2024-11-19T14:23:36.823Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "highlights",
+                        "action": "View",
+                        "resource": "Team",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:23:51.029Z",
+                        "updatedAt": "2024-11-19T14:23:51.029Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Results",
+                        "action": "View",
+                        "resource": "Results",
+                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
+                        "createdAt": "2024-11-19T14:24:15.089Z",
+                        "updatedAt": "2024-11-19T14:24:15.089Z"
+                    }
+                ]
+            }
+        ]
+    }
+}

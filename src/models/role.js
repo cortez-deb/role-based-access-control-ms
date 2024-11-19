@@ -9,6 +9,14 @@ class Role extends Model {
             foreignKey: "role_id",
             otherKey: "user_id",
         });
+        // Role.hasMany(
+        //     models.Permission,
+        //     {
+        //         through: "Role_permissions",
+        //         foreignKey: "role_id",
+        //         otherKey: "permission_id",
+        //     }
+        // )
         Role.belongsToMany(models.Permission, {
             through: "Role_permissions",
             foreignKey: "role_id",

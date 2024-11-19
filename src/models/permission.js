@@ -4,22 +4,16 @@ import sequelize from "../../config/connection.js";
 
 
 class Permission extends Model {
-  id = null;
-  name = null;
-  action = null;
-  resource = null;
-  role_id = null;
-  createdAt = null;
-  updatedAt = null;
+
 }
 
 Permission.init(
   {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-    },
+     id: {
+            type: DataTypes.UUID,
+            primaryKey: true,
+            defaultValue: DataTypes.UUIDV4,
+        },
     name: {
       type: DataTypes.STRING,
       unique: true,

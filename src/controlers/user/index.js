@@ -223,6 +223,14 @@ class UserController {
       ResponseService.success(res, user, "Role removed successfully.");
     }
   }
+  async getRoles (req, res){
+    const roles = await UserService.getRoles(req.params.id);
+    if (!roles) {
+      ResponseService.error(res, "Failed to retrieve roles.");
+    } else {
+      ResponseService.success(res, roles, "Roles retrieved successfully.");
+    }
+  }
   /**
    * Assigns a permission to a user.
    *

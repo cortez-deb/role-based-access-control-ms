@@ -15,7 +15,7 @@ const routes = (app) => {
     app.get(`${api}/:id`, async(req,res)=>{
         PermissionController.get(req,res)
     }, )
-    app.get(`${api}/name/:name`,async(req,res) => {
+    app.get(`${api}/getbyname/:name`,async(req,res) => {
         PermissionController.getByName(req,res)
     })
     app.get(`${api}/role/:roleId`, async (req,res) =>{
@@ -26,6 +26,9 @@ const routes = (app) => {
     })
     app.delete(`${api}/:id`, async (req, res) => {
         PermissionController.delete(req,res)
+    })
+    app.get(`${api}/get/all/departments`, async (req, res) => {
+        PermissionController.getAll(req, res)
     })
 }
 

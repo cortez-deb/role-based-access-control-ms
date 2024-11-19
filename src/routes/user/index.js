@@ -46,6 +46,9 @@ const routes = (app) => {
       UserController.removeRole(req, res)
     }
   );
+  app.get(`${api}/get-roles/:id`, async (req,res)=>{
+    UserController.getRoles(req, res)
+  })
   app.post(
     `${api}/give/permission`,
     validate(userSchema.givePermission),
