@@ -216,9 +216,9 @@ class UserController {
    * };
    */
   async removeRole(req, res) {
-    const user = await UserService.removeRole(req.body.userId, req.body.roleId);
+    const user = await UserService.removeRole(req.params.id);
     if (!user) {
-      ResponseService.error(res, "Failed to remove role.");
+      ResponseService.error(res, user);
     } else {
       ResponseService.success(res, user, "Role removed successfully.");
     }
@@ -297,6 +297,23 @@ class UserController {
       ResponseService.error(res, "Failed to remove permission.");
     } else {
       ResponseService.success(res, user, "Permission removed successfully.");
+    }
+  }
+
+  async getPermissions (req, res){
+    const permissions = await UserService.getPermissions(req.params.id);
+    if (!permissions) {
+      ResponseService.error(res, "Failed to retrieve permissions.");
+    } else {
+      ResponseService.success(res, permissions, "Permissions retrieved successfully.");
+    }
+  }
+  async processLoginRequest(req, res){
+    const user = await UserService.processLoginRequest(req.params.id);
+    if (!user) {
+      ResponseService.error(res, "Failed to login.");
+    } else {
+      ResponseService.success(res, user, "Login Permissions Loaded.");
     }
   }
 }

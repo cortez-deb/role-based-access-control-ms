@@ -2,7 +2,7 @@ import Role from "../../models/role.js";
 import Permission from "../../models/permission.js";
 import RolePermissions from "../../models/rolePermission.js"
 import sequelize from "../../../config/connection.js"
-
+import PermissionService from '../permision/index.js'
 class RoleService {
     /**
      * Creates a new role in the database.
@@ -206,11 +206,17 @@ class RoleService {
      */
     async getPermissionsByRole(role_id){
         try{
-            const permissions = await RolePermissions.findAll(
-                { where: {
-                    role_id: role_id
-                }, include: [Permission] }
-            )
+            const roles = await this.getRoles(role_id);
+            const permissions = [];
+            for (const role of roles) {
+              const rolePermissions = await PermissionService.getAllByRole(role.id);
+              if (rolePermissions) {
+                for (const permission of rolePermissions) {
+                  permissions.push(permission.toJSON());
+                }
+              }
+            }
+      
             return permissions;
         }catch(e){
             console.error(e);

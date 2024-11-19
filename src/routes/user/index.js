@@ -40,8 +40,7 @@ const routes = (app) => {
    }
   );
   app.delete(
-    `${api}/remove/role`,
-    validate(userSchema.assignRole),
+    `${api}/remove/role/:id`,
     async (req, res) => {
       UserController.removeRole(req, res)
     }
@@ -49,20 +48,14 @@ const routes = (app) => {
   app.get(`${api}/get-roles/:id`, async (req,res)=>{
     UserController.getRoles(req, res)
   })
+  app.get(`${api}/get-permissions/:id`, async (req,res)=>{
+    UserController.getPermissions(req, res)
+  })
   app.post(
-    `${api}/give/permission`,
-    validate(userSchema.givePermission),
-   async (req, res) => {
-    UserController.givePermission(req, res)
-   }
-  );
-  app.delete(
-    `${api}/revoke/permission`,
-    validate(userSchema.givePermission),
-    async (req, res) => {
-      UserController.removePermission(req, res)
-    }
-  );
+    `${api}/process/login/request/:id`,
+   async (req, res) =>{
+    UserController.processLoginRequest(req, res)
+   })
 };
 
 export default routes;

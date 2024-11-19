@@ -12,132 +12,45 @@
         "refreshToken": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImVtYWlsIjoidGVzdDJ3MTFAdXNlci5jb20iLCJpZCI6IjQ3ZjcwOGYwLTUxYjMtNDE3MS1hMTg5LWE3MDQ0NjQ2MTAwZSJ9LCJpYXQiOjE3MzIwMjYwMTksImV4cCI6MTczMjAyNjYxOX0.JR1nBmhlL8c2V5r_uOkGc_4Q-PLy0e89ZeDSiZT5sQdWdM7StmHDZ2ltosUF9rvcM8pD5pTX0wiGegw39nhNtWcy0cStacA-bkYu6tVPJeSnFeXoWZcqkyzybcEzLzoTCU8rR8TeVraogJ0wJKT5CSNoR1jiQ5-TtwOdmdJYdJX3rAlX-_CqdECOVzKD9EElF8kvWzXjxnVLptX_nlVEpabKEx8FxbZcdPu95k7bZrwv7KXxPwlZ2KX6rlsomUVpBjoGpzz-BT9G6_5YR4UXWQAWBM6qs8YPGWRzJGyPbGg-8Y-wdsxwzKz6c4s2WSUXKc6thBkMhFOUT6zL7ARMrQ",
         "permissions": [
             {
-                "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                "data": [
+                "7298b84d-2dc8-4100-acbf-5757f1a79a68": [
+                    {
+                        "id": "d0aafed8-017a-4119-b645-f6e5c166a770",
+                        "name": "Team",
+                        "action": "Delet234e",
+                        "resource": "Team",
+                        "role_id": "7298b84d-2dc8-4100-acbf-5757f1a79a68",
+                        "createdAt": "2024-11-19T13:15:06.377Z",
+                        "updatedAt": "2024-11-19T13:15:06.377Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "Delete",
+                        "resource": "Team",
+                        "role_id": "7298b84d-2dc8-4100-acbf-5757f1a79a68",
+                        "createdAt": "2024-11-19T13:49:13.774Z",
+                        "updatedAt": "2024-11-19T13:49:13.774Z"
+                    },
+                    {
+                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
+                        "name": "Team",
+                        "action": "update",
+                        "resource": "Team",
+                        "role_id": "7298b84d-2dc8-4100-acbf-5757f1a79a68",
+                        "createdAt": "2024-11-19T13:52:42.881Z",
+                        "updatedAt": "2024-11-19T13:52:42.881Z"
+                    },
                     {
                         "id": "51865ad4-3e53-4266-a669-82e5664040f2",
                         "name": "Team",
                         "action": "Create",
                         "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:17:11.634Z",
-                        "updatedAt": "2024-11-19T14:17:11.634Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "Team",
-                        "action": "View",
-                        "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:23:36.823Z",
-                        "updatedAt": "2024-11-19T14:23:36.823Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "highlights",
-                        "action": "View",
-                        "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:23:51.029Z",
-                        "updatedAt": "2024-11-19T14:23:51.029Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "Results",
-                        "action": "View",
-                        "resource": "Results",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:24:15.089Z",
-                        "updatedAt": "2024-11-19T14:24:15.089Z"
+                        "role_id": "7298b84d-2dc8-4100-acbf-5757f1a79a68",
+                        "createdAt": "2024-11-19T13:53:28.571Z",
+                        "updatedAt": "2024-11-19T13:53:28.571Z"
                     }
-                ]
-            },
-            {
-                "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                "data": [
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "Team",
-                        "action": "Create",
-                        "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:17:11.634Z",
-                        "updatedAt": "2024-11-19T14:17:11.634Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "Team",
-                        "action": "View",
-                        "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:23:36.823Z",
-                        "updatedAt": "2024-11-19T14:23:36.823Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "highlights",
-                        "action": "View",
-                        "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:23:51.029Z",
-                        "updatedAt": "2024-11-19T14:23:51.029Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "Results",
-                        "action": "View",
-                        "resource": "Results",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:24:15.089Z",
-                        "updatedAt": "2024-11-19T14:24:15.089Z"
-                    }
-                ]
-            }
-            ,
-            {
-                "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                "data": [
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "Team",
-                        "action": "Create",
-                        "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:17:11.634Z",
-                        "updatedAt": "2024-11-19T14:17:11.634Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "Team",
-                        "action": "View",
-                        "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:23:36.823Z",
-                        "updatedAt": "2024-11-19T14:23:36.823Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "highlights",
-                        "action": "View",
-                        "resource": "Team",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:23:51.029Z",
-                        "updatedAt": "2024-11-19T14:23:51.029Z"
-                    },
-                    {
-                        "id": "51865ad4-3e53-4266-a669-82e5664040f2",
-                        "name": "Results",
-                        "action": "View",
-                        "resource": "Results",
-                        "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                        "createdAt": "2024-11-19T14:24:15.089Z",
-                        "updatedAt": "2024-11-19T14:24:15.089Z"
-                    }
-                ]
-            },
-            {
-                "role_id": "a71ebb6a-def0-4ed9-a550-3aab44b9dd59",
-                "data": [
+                ],
+                "a71ebb6a-def0-4ed9-a550-3aab44b9dd59": [
                     {
                         "id": "51865ad4-3e53-4266-a669-82e5664040f2",
                         "name": "Team",
