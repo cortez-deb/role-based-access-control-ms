@@ -1,23 +1,16 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "1234",
+    "username": "kuza",
+    "password": "UQS8PyW5nwqVOEADxmGQCCyRGEzHpPLs",
     "database": "kuza",
-    "host": "127.0.0.1",
-    "dialect": "postgres"
-  },
-  "test": {
-    "username": null,
-    "password": null,
-    "database": null,
-    "host": null,
-    "dialect": null
-  },
-  "production": {
-    "username": null,
-    "password": null,
-    "database": "database_production",
-    "host": null,
-    "dialect": null
+    "host": "dpg-ct63iko8fa8c73c4ehrg-a.virginia-postgres.render.com",
+    "dialect": "postgres",
+    "ssl": true,
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
+    }
   }
 }
